@@ -1,1 +1,0 @@
-{"messaging_product":"whatsapp","contacts":[{"input":"919024575550","wa_id":"919024575550"}],"messages":[{"id":"wamid.HBgMOTE5MDI0NTc1NTUwFQIAERgSRjUyQzUxOUIxRDZDRkYyQkNCAA=="}]}
