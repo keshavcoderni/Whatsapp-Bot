@@ -1,0 +1,535 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins',sans-serif;
+}
+
+/* =========================
+   BODY
+========================= */
+
+body{
+
+    background:
+    radial-gradient(
+        circle at top left,
+        #1e293b,
+        #0f172a 45%,
+        #020617
+    );
+
+    color:white;
+
+    min-height:100vh;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    padding:20px;
+
+    overflow:hidden;
+
+    position:relative;
+
+    transition:0.3s;
+}
+
+/* =========================
+   BACKGROUND EFFECT
+========================= */
+
+body::before{
+
+    content:"";
+
+    position:absolute;
+
+    width:400px;
+    height:400px;
+
+    background:
+    rgba(124,58,237,0.22);
+
+    border-radius:50%;
+
+    filter:blur(120px);
+
+    top:-120px;
+    right:-100px;
+
+    z-index:-1;
+}
+
+body::after{
+
+    content:"";
+
+    position:absolute;
+
+    width:320px;
+    height:320px;
+
+    background:
+    rgba(37,99,235,0.18);
+
+    border-radius:50%;
+
+    filter:blur(120px);
+
+    bottom:-120px;
+    left:-100px;
+
+    z-index:-1;
+}
+
+/* =========================
+   SETTINGS CARD
+========================= */
+
+.settings-card{
+
+    width:100%;
+
+    max-width:580px;
+
+    background:
+    rgba(17,24,39,0.75);
+
+    backdrop-filter:
+    blur(20px);
+
+    -webkit-backdrop-filter:
+    blur(20px);
+
+    border:
+    1px solid rgba(255,255,255,0.08);
+
+    border-radius:30px;
+
+    padding:32px;
+
+    box-shadow:
+    0 20px 50px rgba(0,0,0,0.35);
+
+    animation:
+    fadeUp 0.6s ease;
+}
+
+/* =========================
+   ANIMATION
+========================= */
+
+@keyframes fadeUp{
+
+    from{
+
+        opacity:0;
+
+        transform:
+        translateY(25px)
+        scale(0.98);
+    }
+
+    to{
+
+        opacity:1;
+
+        transform:
+        translateY(0)
+        scale(1);
+    }
+}
+
+/* =========================
+   HEADER
+========================= */
+
+.settings-header{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    margin-bottom:30px;
+
+    padding-bottom:20px;
+
+    border-bottom:
+    1px solid rgba(255,255,255,0.08);
+}
+
+.settings-title{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:14px;
+}
+
+.settings-title i{
+
+    width:55px;
+    height:55px;
+
+    border-radius:18px;
+
+    background:
+    rgba(124,58,237,0.18);
+
+    color:#c4b5fd;
+
+    display:flex;
+
+    align-items:center;
+    justify-content:center;
+
+    font-size:24px;
+}
+
+.settings-title h1{
+
+    font-size:30px;
+
+    font-weight:700;
+}
+
+.admin-badge{
+
+    background:
+    rgba(124,58,237,0.16);
+
+    color:#c4b5fd;
+
+    padding:8px 16px;
+
+    border-radius:40px;
+
+    font-size:13px;
+
+    display:flex;
+
+    align-items:center;
+
+    gap:8px;
+}
+
+/* =========================
+   SETTING BOX
+========================= */
+
+.setting-box{
+
+    background:#1e293b;
+
+    border-radius:22px;
+
+    padding:20px;
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+
+    margin-bottom:18px;
+
+    transition:0.3s;
+}
+
+.setting-box:hover{
+
+    background:#2d3a4e;
+
+    transform:
+    translateY(-3px)
+    scale(1.01);
+
+    box-shadow:
+    0 12px 25px rgba(0,0,0,0.18);
+}
+
+.setting-left{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:16px;
+}
+
+.setting-left i{
+
+    width:48px;
+    height:48px;
+
+    border-radius:16px;
+
+    background:
+    rgba(255,255,255,0.05);
+
+    display:flex;
+
+    align-items:center;
+    justify-content:center;
+
+    font-size:20px;
+
+    color:#60a5fa;
+}
+
+.setting-info h3{
+
+    font-size:17px;
+
+    margin-bottom:5px;
+}
+
+.setting-info p{
+
+    font-size:13px;
+
+    color:#94a3b8;
+}
+
+/* =========================
+   SWITCH
+========================= */
+
+.switch{
+
+    position:relative;
+
+    width:65px;
+
+    height:34px;
+}
+
+.switch input{
+    display:none;
+}
+
+.slider{
+
+    position:absolute;
+
+    inset:0;
+
+    background:#334155;
+
+    border-radius:40px;
+
+    cursor:pointer;
+
+    transition:0.3s;
+}
+
+.slider:before{
+
+    content:"";
+
+    position:absolute;
+
+    width:26px;
+    height:26px;
+
+    left:4px;
+    top:4px;
+
+    background:white;
+
+    border-radius:50%;
+
+    transition:0.3s;
+}
+
+input:checked + .slider{
+
+    background:#7c3aed;
+}
+
+input:checked + .slider:before{
+
+    transform:translateX(31px);
+}
+
+/* =========================
+   BUTTONS
+========================= */
+
+.action-buttons{
+
+    display:flex;
+
+    gap:14px;
+
+    margin-top:28px;
+}
+
+.back-btn,
+.save-btn{
+
+    flex:1;
+
+    height:52px;
+
+    border:none;
+
+    border-radius:40px;
+
+    font-size:15px;
+
+    font-weight:600;
+
+    cursor:pointer;
+
+    display:flex;
+
+    align-items:center;
+    justify-content:center;
+
+    gap:10px;
+
+    transition:0.3s;
+
+    text-decoration:none;
+}
+
+.back-btn{
+
+    background:#334155;
+
+    color:white;
+}
+
+.back-btn:hover{
+
+    background:#475569;
+
+    transform:translateY(-2px);
+}
+
+.save-btn{
+
+    background:
+    linear-gradient(
+        135deg,
+        #8b5cf6,
+        #6d28d9
+    );
+
+    color:white;
+
+    position:relative;
+
+    overflow:hidden;
+}
+
+.save-btn:hover{
+
+    transform:translateY(-2px);
+
+    box-shadow:
+    0 12px 25px rgba(124,58,237,0.35);
+}
+
+.save-btn::before{
+
+    content:"";
+
+    position:absolute;
+
+    width:120px;
+    height:220%;
+
+    background:
+    rgba(255,255,255,0.18);
+
+    transform:rotate(25deg);
+
+    left:-140px;
+    top:-50%;
+
+    transition:0.6s;
+}
+
+.save-btn:hover::before{
+
+    left:130%;
+}
+
+/* =========================
+   LIGHT MODE
+========================= */
+
+body.light-mode{
+
+    background:#f1f5f9;
+
+    color:#111827;
+}
+
+body.light-mode .settings-card{
+
+    background:
+    rgba(255,255,255,0.82);
+
+    border:
+    1px solid rgba(0,0,0,0.06);
+}
+
+body.light-mode .setting-box{
+
+    background:#e2e8f0;
+}
+
+body.light-mode .setting-box:hover{
+
+    background:#dbe4ef;
+}
+
+body.light-mode .setting-info p{
+
+    color:#475569;
+}
+
+body.light-mode .back-btn{
+
+    background:#cbd5e1;
+
+    color:#111827;
+}
+
+/* =========================
+   MOBILE
+========================= */
+
+@media(max-width:600px){
+
+    .settings-card{
+        padding:24px;
+    }
+
+    .settings-header{
+        flex-direction:column;
+        align-items:flex-start;
+        gap:15px;
+    }
+
+    .setting-box{
+        flex-direction:column;
+        align-items:flex-start;
+        gap:20px;
+    }
+
+    .action-buttons{
+        flex-direction:column;
+    }
+}
